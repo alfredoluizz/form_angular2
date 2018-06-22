@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Hero Form</h1>
+
+  <form class="card-block" (ngSubmit)="newHero()" #formulario="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <!-- <input type="text" class="form-control" id="name" required> -->
+      <input class="form-control" type="text" id="name" [(ngModel)]="model.name" name="name" #nome="ngModel" placeholder="digite o nome"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>      
+      <input class="form-control" type="text" id="name" [(ngModel)]="alterEgo" name="name" #nome="ngModel" placeholder="digite o nome"
+        required>
+      
+    </div>
+
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control" id="power" required [(ngModel)]="hero" name="hero" #tipo="ngModel">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>        
+
+  </select>
+    </div>
+
+
+    
+    <button type="submit" class="btn btn-success">Submit</button>
+    <!-- <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button> -->
+
+  </form>
+</div>
